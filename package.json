@@ -1,0 +1,45 @@
+{
+  "name": "custom-blog",
+  "version": "1.0.0",
+  "description": "This is a new approach to a full stack app with Express backend serving front end with pug. Built as MVP first, firther features added with further progress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:dev": "nodemon app.js",
+    "sass": "node-sass src/scss/index.scss public/style.css",
+    "postcss": "postcss --config postcss.config.js -r public/*.css",
+    "dev:css": "npm run sass",
+    "build:css": "npm run sass && npm run postcss",
+    "watch:css": "onchange \"src/scss/**/*\" -- npm run dev:css",
+    "dev:js": "webpack --mode development",
+    "build:js": "webpack --mode production",
+    "watch:js": "onchange \"src/js/**/*\" -- npm run dev:js",
+    "watch": "concurrently \"npm run watch:css\" \"npm run watch:js\"",
+    "build": "concurrently \"npm run build:css\" \"npm run build:js\"",
+    "browser-sync": "browser-sync start --proxy \"localhost:8080\" --files \"./public\" \"./views\"",
+    "dev": "concurrently \"npm run watch\" \"npm run server:dev\" \"npm run browser-sync\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "compress": "^0.99.0",
+    "concurrently": "^4.1.2",
+    "cssnano": "^4.1.10",
+    "express": "^4.17.1",
+    "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
+    "onchange": "^6.0.0",
+    "postcss": "^7.0.17",
+    "pug": "^2.0.4",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "passport": "^0.4.0"
+  }
+}

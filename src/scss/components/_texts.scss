@@ -1,0 +1,17 @@
+.title{
+    color: purple;
+    text-decoration: underline;
+    transition: all .5s ease;
+    text-align: center;
+
+    &:hover{
+        transform: translateX(36px);
+    }
+}
+
+.hello{
+    background: linear-gradient(180deg,black, red);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
