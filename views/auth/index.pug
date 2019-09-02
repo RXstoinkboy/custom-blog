@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Welcome!
-    body
-        header
-            h1.title hi!
-            h2.subtitle This is where it all begins
-                span.dots ...
-        block auth
-        footer
-            .info
-                h3.info__text what's that all about?
-                .info__line
+extends ../layout.pug
+
+block layout-content
+    .wrapper    
+        section.auth-welcome
+            h1.auth-welcome__hi hi!
+            h2.auth-welcome__heading This is where it all begins
+                span.heading__dots ...
+        
+        section.auth-form
+            include ./auth.pug
+
+        footer.more-info What's that all about?
+            .underline 

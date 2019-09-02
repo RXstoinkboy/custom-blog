@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080;
 app.set('view engine', 'pug');
 app.use(express.static('public'));
 
-app.use('/auth', router.auth);
+app.use('/', router.auth);
 
 // app.get('*', (req, res) => {
 //   res.status(200).render('404');

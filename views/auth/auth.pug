@@ -1,0 +1,26 @@
+button.option-button log in
+button.option-button sign up
+
+form.auth__form(action="/login" methon='post')
+    label(for="login-email") Please enter your e-mail
+    input.form__input#login-email(type="email", name="login-email" placeholder='e-mail' pattern='/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi')
+
+    label(for="login-username") Please enter your username
+    input.form__input#login-username(type="name", name="login-username" placeholder='username' pattern='/[a-zA-Z][a-zA-Z0-9-_]{3,32}/gi')
+
+    label(for="login-password") Please enter your password
+    input.form__input#login-password(type="password", name="login-password" placeholder='password' pattern='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm')
+
+    button(type="submit") log in
+
+form.auth__form(action="/register" methon='post')
+    label(for="register-email") Please enter your e-mail
+    input.form__input#register-email(type="email", name="register-email" placeholder='e-mail' pattern='/\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi')
+
+    label(for="register-username") Please enter your username
+    input.form__input#register-username(type="name", name="register-username" placeholder='username' pattern='/[a-zA-Z][a-zA-Z0-9-_]{3,32}/gi')
+
+    label(for="register-password") Please enter your password
+    input.form__input#register-password(type="password", name="register-password" placeholder='password' pattern='/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm')
+    
+    button(type="submit") sign up
